@@ -81,8 +81,8 @@ if uploaded_file is not None:
             st.markdown(
             f"""
             <div style='text-align: center; color: #1d3557'>
-                <h2 style='color: #1d3557;'>label=Predictions: label_visibility='collapsed'</h2>
-                <p><strong>{prediction}</strong></p>
+                <h2 style='color: #1d3557;'>Woo hoo! You got a</h2>
+                <h2 style='color: #1d3557;'><strong>{prediction}</strong></h2>
             </div>
             """,
         unsafe_allow_html=True
