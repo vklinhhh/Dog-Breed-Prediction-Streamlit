@@ -1,10 +1,9 @@
 # Load libraries
 
-import cv2
+
 import os
 import numpy as np
 import pickle
-import copy
 import keras
 import tensorflow as tf
 import pandas as pd
@@ -13,6 +12,7 @@ from tensorflow.keras import models,utils
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img,img_to_array
 from tensorflow.python.keras import utils
+from PIL import Image
 
 # keras libraries
 
@@ -102,8 +102,8 @@ with open(os.path.join(current_path,'static/class_names.pkl'), 'rb') as f:
 
 def predictor(image_path):
     X = []
-    orig_image = cv2.cvtColor(cv2.imread(image_path), cv2.COLOR_BGR2RGB)
-    res_image = cv2.resize(orig_image, (331, 331))
+    orig_image = Image.open(image_path).convert("RGB")
+    res_image = orig_image.resize((331, 331))
     X.append(res_image)
     X_test = np.array(X)
     test_features = get_concat_features(get_valfeatures, modellist, preprocs, X_test)
