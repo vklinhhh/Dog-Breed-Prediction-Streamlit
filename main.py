@@ -8,8 +8,11 @@ sns.set_theme(style="darkgrid")
 sns.set()
 from PIL import Image
 
+###### Design App #########
 
-st.title('Dog Breed Classifier')
+import time
+
+st.title('Dog Breed Prediction')
 
 def save_uploaded_file(uploaded_file):
     try:
@@ -18,26 +21,22 @@ def save_uploaded_file(uploaded_file):
         return 1    
     except:
         return 0
-    
+
 uploaded_file = st.file_uploader("Upload Image")
 
 # text over upload button "Upload Image"
-
 if uploaded_file is not None:
-
-    if save_uploaded_file(uploaded_file): 
-
+    if save_uploaded_file(uploaded_file):
         # display the image
-
         display_image = Image.open(uploaded_file)
-
         st.image(display_image)
 
-        prediction = predictor(os.path.join('static/images',uploaded_file.name))
+        # Perform image feature extraction (with loading chart)
+        with st.spinner('Calculating...'):
+            time.sleep(2)  # Simulating feature extraction process
+            prediction = predictor(os.path.join('static/images', uploaded_file.name))
 
-        os.remove('static/images/'+uploaded_file.name)
-
+        os.remove('static/images/' + uploaded_file.name)
         # deleting uploaded saved picture after prediction
         st.write("Predictions:")
         st.write(prediction)
-
