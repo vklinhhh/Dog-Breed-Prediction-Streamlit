@@ -1,6 +1,6 @@
 .highlight {
     border-radius: 0.4rem;
-    color: white;
+    color: #1d3557;
     padding: 0.5rem;
     margin-bottom: 1rem;
   }
@@ -9,11 +9,11 @@
     font-weight: 700;
   }
   .blue {
-    background-color: lightcoral;
+    background-color: #f1faee;
   }
   .red {
-    background-color: lightblue;
+    background-color: l#e63946;
   }
   .customcolor {
-    color: #457b9d;
+    color: #1d3557;
   }
