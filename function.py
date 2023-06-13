@@ -99,13 +99,14 @@ for model_name in model_names:
 with open(os.path.join(current_path,'static/class_names.pkl'), 'rb') as f:
     class_names = pickle.load(f)
 
-
 def predictor(image_path):
-    X = []
+    X = np.empty((0, 331, 331, 3), dtype=np.uint8)  # Create an empty array with the desired shape
     orig_image = Image.open(image_path).convert("RGB")
     res_image = orig_image.resize((331, 331))
-    X.append(res_image)
-    X_test = np.array(X)
+    X = np.append(X, [np.array(res_image)], axis=0)  # Append the resized image to the array
+    
+    X_test = X  # Use the modified X array for testing
+    
     test_features = get_concat_features(get_valfeatures, modellist, preprocs, X_test)
     
     y_pred_norm = trained_models[0].predict(test_features, batch_size=128) / 3

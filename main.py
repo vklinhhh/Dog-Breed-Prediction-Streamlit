@@ -1,7 +1,5 @@
 from function import *
 
-#importing all the helper fxn from helper.py which we will create later
-
 import streamlit as st
 import os
 import matplotlib.pyplot as plt
@@ -9,6 +7,8 @@ import seaborn as sns
 sns.set_theme(style="darkgrid")
 sns.set()
 from PIL import Image
+
+
 st.title('Dog Breed Classifier')
 
 def save_uploaded_file(uploaded_file):
