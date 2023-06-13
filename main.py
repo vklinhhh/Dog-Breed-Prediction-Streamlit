@@ -60,7 +60,7 @@ x = "<div style='text-align: center;'><span class='customcolor'><span class='bol
 
 
 st.markdown(x, unsafe_allow_html=True)
-uploaded_file = st.file_uploader('')
+uploaded_file = st.file_uploader('Uploaded image', label_visibility='collapsed')
 
 # text over upload button "Upload Image"
 if uploaded_file is not None:
