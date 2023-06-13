@@ -1,6 +1,6 @@
 # Load libraries
 
-import cv2, random, time, shutil, csv
+import cv2
 import os
 import numpy as np
 import pickle
