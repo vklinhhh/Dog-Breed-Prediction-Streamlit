@@ -82,7 +82,7 @@ if uploaded_file is not None:
             f"""
             <div style='text-align: center; color: #1d3557'>
                 <h2 style='color: #1d3557;'>Woo hoo! You got a</h2>
-                <h2 style='color: #1d3557;'><strong>{prediction}</strong></h2>
+                <h2 style='color: #1d3557;'><span class='highlight red'><strong>{prediction}</strong></span></h2>
             </div>
             """,
         unsafe_allow_html=True
